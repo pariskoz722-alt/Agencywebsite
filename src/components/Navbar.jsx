@@ -15,7 +15,6 @@ export default function Navbar() {
           <Link href="/services">Services</Link>
           <Link href="/portfolio">Portfolio</Link>
           <Link href="/pricing">Pricing</Link>
-          <Link href="/faq">Faq</Link>
           <Link href="/contact" className="nav-cta">Contact Us</Link>
         </div>
       </div>
