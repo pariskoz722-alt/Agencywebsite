@@ -21,7 +21,6 @@ export default function Navbar() {
           <Link href="#about" onClick={() => setMobileOpen(false)}>About</Link>
           <Link href="#services" onClick={() => setMobileOpen(false)}>Services</Link>
           <Link href="#portfolio" onClick={() => setMobileOpen(false)}>Portfolio</Link>
-          <Link href="#pricing" onClick={() => setMobileOpen(false)}>Pricing</Link>
           <Link href="#contact" className="nav-cta" onClick={() => setMobileOpen(false)}>
             Contact Us
           </Link>
