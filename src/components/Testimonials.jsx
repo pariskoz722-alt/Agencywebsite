@@ -13,7 +13,7 @@ const reviews = [
     name: "Marcus Vance",
     role: "Founder, Apex Capital",
     quote:
-      "NexusDigital took our outdated platform and turned it into an absolute masterpiece. The design is breathtaking, but the custom automation they built is what truly transformed our business. They operate at a level of quality that is extremely rare.",
+      "Sterling Digital took our outdated platform and turned it into an absolute masterpiece. The design is breathtaking, but the custom automation they built is what truly transformed our business. They operate at a level of quality that is extremely rare.",
   },
   {
     initials: "SR",
@@ -27,7 +27,7 @@ const reviews = [
     name: "James Thorpe",
     role: "CEO, Northwave Labs",
     quote:
-      "Working with NexusDigital was seamless from day one. They pushed back when our ideas weren't optimal, proposed smarter solutions, and shipped on time. That combination is near impossible to find.",
+      "Working with Sterling Digital was seamless from day one. They pushed back when our ideas weren't optimal, proposed smarter solutions, and shipped on time. That combination is near impossible to find.",
   },
 ];
 

@@ -1,16 +1,53 @@
 "use client";
 import { motion } from "framer-motion";
 
-const miniProjects = [
+// GoClosed pipeline preview — a simplified mock of the app's signature Kanban board.
+const goclosedBoard = [
   {
-    label: "2025 · SaaS Platform",
-    title: "Momentum Dashboard",
-    bg: "linear-gradient(135deg, #0C2A1E 0%, #081C13 100%)",
+    stage: "Research",
+    count: 4,
+    cards: [{ name: "Kάβα Nikos", value: "€1.2k" }],
   },
   {
-    label: "2025 · E-commerce",
-    title: "Ivory Boutique Store",
+    stage: "Demo Built",
+    count: 3,
+    cards: [{ name: "Olive & Co.", value: "€2.4k" }],
+  },
+  {
+    stage: "Pitched",
+    count: 2,
+    cards: [{ name: "Marea Sushi", value: "€3.1k" }],
+  },
+  {
+    stage: "Closed",
+    count: 5,
+    cards: [{ name: "Theros Bar", value: "€4.8k" }],
+    won: true,
+  },
+];
+
+const goclosedHighlights = [
+  "6-stage Kanban pipeline",
+  "One-click outreach",
+  "⌘K command palette",
+  "Pitch template vault",
+  "Next.js + TypeScript",
+];
+
+const miniProjects = [
+  {
+    label: "2026 · Web App · Quiz Platform",
+    title: "PanelQuiz.gr",
+    desc: "Still buttoning its shirt. We're wiring up the buzzers, polishing the questions, and teaching it to keep score without cheating. Big-brain energy, dropping soon.",
+    status: "Under construction",
     bg: "linear-gradient(135deg, #123D2B 0%, #0C2A1E 100%)",
+  },
+  {
+    label: "2026 · Restaurant & Beach Bar",
+    title: "Theros by the Sea",
+    desc: "A sun-soaked site for a seaside restaurant & beach bar in Anavyssos — warm imagery, an easy menu, and a direct path to reservations.",
+    href: "https://therosbythesea.com",
+    bg: "linear-gradient(rgba(8, 28, 19, 0.15), rgba(8, 28, 19, 0.5)), url(/theros.jpg) center 65% / cover",
   },
 ];
 
@@ -37,9 +74,40 @@ export default function Portofolio() {
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="project-image-wrapper">
-            <div className="project-image-placeholder">
-              [ Cinematic Project Visual / Mockup ]
+          <div className="project-image-wrapper gc-showcase">
+            <span className="mini-project-badge gc-badge">
+              <span className="badge-dot" aria-hidden="true" />
+              In development
+            </span>
+            <div className="gc-browser">
+              <div className="gc-browser-bar">
+                <div className="gc-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div className="gc-url">goclosed.app</div>
+              </div>
+              <div className="gc-board">
+                {goclosedBoard.map((col) => (
+                  <div className="gc-col" key={col.stage}>
+                    <div className="gc-col-head">
+                      <span>{col.stage}</span>
+                      <span className="gc-col-count">{col.count}</span>
+                    </div>
+                    {col.cards.map((card) => (
+                      <div
+                        className={`gc-card ${col.won ? "gc-card-won" : ""}`}
+                        key={card.name}
+                      >
+                        <span className="gc-card-name">{card.name}</span>
+                        <span className="gc-card-value">{card.value}</span>
+                      </div>
+                    ))}
+                    <div className="gc-ghost"></div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -47,37 +115,68 @@ export default function Portofolio() {
             <div className="project-meta">
               <span className="project-year">2026</span>
               <span className="meta-dot">·</span>
-              <span className="project-category">Web Design & Brand Identity</span>
+              <span className="project-category">SaaS Product · CRM for Freelancers</span>
             </div>
-            <h3 className="project-title-premium">Aether Luxury Real Estate</h3>
+            <h3 className="project-title-premium">GoClosed</h3>
+            <p className="project-tagline">Turn cold outreach into closed deals.</p>
             <p className="project-desc-premium">
-              A bespoke digital experience for a premium real estate agency, featuring cinematic transitions, clean grid structures, and seamless user flows designed to convert high-intent buyers.
+              A lightweight CRM built for freelancers and small agencies who win clients
+              through demo-first cold outreach. Instead of the bloat of enterprise tools,
+              GoClosed maps to the real flow — research a business, build a demo, pitch,
+              follow up, close — with a drag-and-drop pipeline, one-click email, DM and call
+              from every card, and a reusable pitch-template vault. Built in Next.js,
+              TypeScript, and Tailwind.
             </p>
+            <ul className="project-highlights">
+              {goclosedHighlights.map((h) => (
+                <li key={h}>{h}</li>
+              ))}
+            </ul>
+            <span className="project-status-pill">
+              <span className="badge-dot" aria-hidden="true" />
+              In active development · launching at goclosed.app
+            </span>
           </div>
         </motion.div>
 
         <div className="portfolio-projects-grid">
-          {miniProjects.map((project, i) => (
-            <motion.div
-              className="mini-project-card"
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-            >
-              <div
-                className="mini-project-image"
-                style={{ background: project.bg }}
+          {miniProjects.map((project, i) => {
+            const CardTag = project.href ? motion.a : motion.div;
+            const linkProps = project.href
+              ? { href: project.href, target: "_blank", rel: "noopener noreferrer" }
+              : {};
+            return (
+              <CardTag
+                className="mini-project-card"
+                key={i}
+                {...linkProps}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
               >
-                [ Project Visual ]
-              </div>
-              <div className="mini-project-info">
-                <p className="mini-project-meta">{project.label}</p>
-                <h4 className="mini-project-title">{project.title}</h4>
-              </div>
-            </motion.div>
-          ))}
+                <div
+                  className="mini-project-image"
+                  style={{ background: project.bg }}
+                >
+                  {project.status && (
+                    <span className="mini-project-badge">
+                      <span className="badge-dot" aria-hidden="true" />
+                      {project.status}
+                    </span>
+                  )}
+                  <span className="mini-project-visual-label">{project.title}</span>
+                </div>
+                <div className="mini-project-info">
+                  <p className="mini-project-meta">{project.label}</p>
+                  <h4 className="mini-project-title">{project.title}</h4>
+                  {project.desc && (
+                    <p className="mini-project-desc">{project.desc}</p>
+                  )}
+                </div>
+              </CardTag>
+            );
+          })}
         </div>
 
       </div>

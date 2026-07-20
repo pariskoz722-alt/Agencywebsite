@@ -2,6 +2,7 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -10,8 +11,13 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "Nexus Digital Agency",
-  description: "Premium digital experiences for forward-thinking brands.",
+  metadataBase: new URL("https://sterlingdigital.gr"),
+  title: {
+    default: "Sterling Digital — Premium Web Design & Development",
+    template: "%s | Sterling Digital",
+  },
+  description:
+    "Sterling Digital crafts premium websites, ultra-fast development, and intelligent automation for forward-thinking brands.",
 };
 
 export default function RootLayout({ children }) {
@@ -21,6 +27,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );

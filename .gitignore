@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# Stray photo originals
+/6O1A5835.jpg
