@@ -37,7 +37,6 @@ export default function Footer() {
           <h4 className="footer-col-title">Connect</h4>
           <ul className="footer-list">
             <li><a href="mailto:hello@sterlingdigital.gr">Email Us</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
           </ul>
         </div>
@@ -57,9 +56,6 @@ export default function Footer() {
         <div className="footer-bottom-container">
           <p className="copyright">
             &copy; {new Date().getFullYear()} Sterling Digital. All rights reserved.
-          </p>
-          <p className="developer-tag">
-            sterlingdigital.gr — Made with true craftsmanship.
           </p>
         </div>
       </div>

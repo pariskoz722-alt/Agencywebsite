@@ -18,6 +18,7 @@ export default function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0 }}
         >
+          <img src="/logo.jpg" alt="" className="logo-img" />
           Sterling <span className="logo-accent">Digital</span>
         </MotionLink>
 

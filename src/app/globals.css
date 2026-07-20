@@ -63,16 +63,28 @@ body {
 }
 
 .logo {
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-family: var(--font-logo), Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
   color: var(--text-white);
   text-decoration: none;
 }
 
+.logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 .logo span {
   color: var(--text-muted);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .nav-links {
@@ -1788,7 +1800,6 @@ a.mini-project-card {
 }
 
 .copyright { margin: 0; }
-.developer-tag { margin: 0; font-weight: 500; }
 
 /* ============================================================
    ANIMATIONS
