@@ -1,6 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import MagneticLink from "./MagneticLink";
 
 // Each element fades in and rises 40px, staggered 0.15s after the previous one.
 // The custom index controls where it lands in the landing sequence:
@@ -19,9 +20,56 @@ const reveal = {
   }),
 };
 
+// The mockup website assembles itself piece by piece once the frame lands.
+const buildSequence = {
+  hidden: {},
+  show: {
+    transition: { delayChildren: 1.5, staggerChildren: 0.18 },
+  },
+};
+
+// Bars "type" out from the left; cards pop up with a spring.
+const buildBar = {
+  hidden: { opacity: 0, scaleX: 0 },
+  show: {
+    opacity: 1,
+    scaleX: 1,
+    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const buildCard = {
+  hidden: { opacity: 0, y: 14, scale: 0.92 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { type: "spring", stiffness: 320, damping: 22 },
+  },
+};
+
 export default function Hero() {
+  // The aurora drifts on its own, then leans a little toward the cursor.
+  const px = useMotionValue(0);
+  const py = useMotionValue(0);
+  const ax = useSpring(px, { stiffness: 40, damping: 20 });
+  const ay = useSpring(py, { stiffness: 40, damping: 20 });
+  const auroraX = useTransform(ax, (v) => `${v * 40}px`);
+  const auroraY = useTransform(ay, (v) => `${v * 30}px`);
+
+  const onPointerMove = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    px.set((e.clientX - r.left) / r.width - 0.5);
+    py.set((e.clientY - r.top) / r.height - 0.5);
+  };
+
   return (
-    <section className="hero-section">
+    <section className="hero-section" onPointerMove={onPointerMove}>
+      <motion.div
+        className="hero-aurora"
+        aria-hidden="true"
+        style={{ x: auroraX, y: auroraY }}
+      />
       <div className="hero-container">
 
         <div className="hero-content">
@@ -45,7 +93,7 @@ export default function Hero() {
               that make businesses
             </motion.span>
             <motion.span
-              className="hero-line text-gradient"
+              className="hero-line text-gradient shimmer-line"
               variants={reveal}
               custom={2}
               initial="hidden"
@@ -73,8 +121,8 @@ export default function Hero() {
             initial="hidden"
             animate="show"
           >
-            <Link href="#contact" className="btn-primary">Book a Call</Link>
-            <Link href="#portfolio" className="btn-secondary">View Our Work</Link>
+            <MagneticLink href="#contact" className="btn-primary">Book a Call</MagneticLink>
+            <MagneticLink href="#portfolio" className="btn-secondary">View Our Work</MagneticLink>
           </motion.div>
 
         </div>
@@ -95,27 +143,32 @@ export default function Hero() {
               </div>
               <div className="browser-url">sterlingdigital.gr</div>
             </div>
-            <div className="browser-screen">
-              <div className="mock-nav-bar">
+            <motion.div
+              className="browser-screen"
+              variants={buildSequence}
+              initial="hidden"
+              animate="show"
+            >
+              <motion.div className="mock-nav-bar" variants={buildBar} style={{ originX: 0 }}>
                 <div className="mock-logo-strip"></div>
                 <div className="mock-nav-pills">
                   <span></span>
                   <span></span>
                   <span></span>
                 </div>
-              </div>
-              <div className="mock-h-block accent"></div>
-              <div className="mock-h-block wide"></div>
-              <div className="mock-h-block medium"></div>
-              <div className="mock-h-block short"></div>
-              <div className="mock-cta-strip"></div>
-              <div className="mock-divider"></div>
+              </motion.div>
+              <motion.div className="mock-h-block accent" variants={buildBar} style={{ originX: 0 }} />
+              <motion.div className="mock-h-block wide" variants={buildBar} style={{ originX: 0 }} />
+              <motion.div className="mock-h-block medium" variants={buildBar} style={{ originX: 0 }} />
+              <motion.div className="mock-h-block short" variants={buildBar} style={{ originX: 0 }} />
+              <motion.div className="mock-cta-strip" variants={buildCard} />
+              <motion.div className="mock-divider" variants={buildBar} style={{ originX: 0 }} />
               <div className="mock-cards-grid">
-                <div className="mock-card-block"></div>
-                <div className="mock-card-block"></div>
-                <div className="mock-card-block"></div>
+                <motion.div className="mock-card-block" variants={buildCard} />
+                <motion.div className="mock-card-block" variants={buildCard} />
+                <motion.div className="mock-card-block" variants={buildCard} />
               </div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 

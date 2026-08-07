@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { trackSpotlight } from "./spotlight";
 
 const services = [
   {
@@ -55,8 +56,9 @@ export default function Services() {
         <div className="services-grid-premium">
           {services.map((service, index) => (
             <motion.div
-              className="premium-service-card"
+              className="premium-service-card spotlight-card"
               key={index}
+              onMouseMove={trackSpotlight}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}

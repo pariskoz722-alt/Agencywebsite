@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import MotionProvider from "@/components/MotionProvider";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -30,10 +31,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${fraunces.variable}`}>
       <body>
-        <Navbar />
-        {children}
-        <Footer />
-        <CookieConsent />
+        <MotionProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <CookieConsent />
+        </MotionProvider>
       </body>
     </html>
   );

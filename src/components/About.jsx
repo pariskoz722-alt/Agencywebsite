@@ -1,11 +1,38 @@
 "use client";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView, animate } from "framer-motion";
 
 const stats = [
   { number: "50+", label: "Projects Delivered" },
   { number: "100%", label: "Client Satisfaction" },
   { number: "3+", label: "Years of Craft" },
 ];
+
+// Counts up from 0 the first time it scrolls into view, keeping the suffix (+/%).
+function StatNumber({ value }) {
+  const target = parseInt(value, 10);
+  const suffix = value.replace(String(target), "");
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.6 });
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(0, target, {
+      duration: 1.6,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (v) => setDisplay(Math.round(v)),
+    });
+    return () => controls.stop();
+  }, [inView, target]);
+
+  return (
+    <span ref={ref} className="stat-number">
+      {display}
+      {suffix}
+    </span>
+  );
+}
 
 export default function About() {
   return (
@@ -52,7 +79,7 @@ export default function About() {
           >
             {stats.map((stat, i) => (
               <div className="stat-item" key={i}>
-                <span className="stat-number">{stat.number}</span>
+                <StatNumber value={stat.number} />
                 <span className="stat-label">{stat.label}</span>
               </div>
             ))}

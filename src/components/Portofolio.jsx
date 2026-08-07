@@ -1,8 +1,14 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { trackSpotlight } from "./spotlight";
 
 // GoClosed pipeline preview — a simplified mock of the app's signature Kanban board.
-const goclosedBoard = [
+// When the showcase scrolls into view, the Marea Sushi card "closes the deal":
+// it lifts out of Pitched and springs over to Closed, counts updating with it.
+const movingCard = { name: "Marea Sushi", value: "€3.1k" };
+
+const staticBoard = [
   {
     stage: "Research",
     count: 4,
@@ -12,17 +18,6 @@ const goclosedBoard = [
     stage: "Demo Built",
     count: 3,
     cards: [{ name: "Olive & Co.", value: "€2.4k" }],
-  },
-  {
-    stage: "Pitched",
-    count: 2,
-    cards: [{ name: "Marea Sushi", value: "€3.1k" }],
-  },
-  {
-    stage: "Closed",
-    count: 5,
-    cards: [{ name: "Theros Bar", value: "€4.8k" }],
-    won: true,
   },
 ];
 
@@ -51,7 +46,39 @@ const miniProjects = [
   },
 ];
 
+function KanbanCard({ card, won, layoutId }) {
+  return (
+    <motion.div
+      className={`gc-card ${won ? "gc-card-won" : ""}`}
+      layoutId={layoutId}
+      transition={{ type: "spring", stiffness: 220, damping: 26 }}
+    >
+      <span className="gc-card-name">{card.name}</span>
+      <span className="gc-card-value">{card.value}</span>
+    </motion.div>
+  );
+}
+
 export default function Portofolio() {
+  const [dealClosed, setDealClosed] = useState(false);
+
+  const board = [
+    ...staticBoard,
+    {
+      stage: "Pitched",
+      count: dealClosed ? 1 : 2,
+      cards: dealClosed ? [] : [movingCard],
+    },
+    {
+      stage: "Closed",
+      count: dealClosed ? 6 : 5,
+      cards: dealClosed
+        ? [{ name: "Theros Bar", value: "€4.8k" }, movingCard]
+        : [{ name: "Theros Bar", value: "€4.8k" }],
+      won: true,
+    },
+  ];
+
   return (
     <section id="portfolio" className="featured-project-section">
       <div className="portfolio-container-premium">
@@ -73,6 +100,7 @@ export default function Portofolio() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          onViewportEnter={() => setTimeout(() => setDealClosed(true), 1400)}
         >
           <div className="project-image-wrapper gc-showcase">
             <span className="mini-project-badge gc-badge">
@@ -89,20 +117,19 @@ export default function Portofolio() {
                 <div className="gc-url">goclosed.app</div>
               </div>
               <div className="gc-board">
-                {goclosedBoard.map((col) => (
+                {board.map((col) => (
                   <div className="gc-col" key={col.stage}>
                     <div className="gc-col-head">
                       <span>{col.stage}</span>
                       <span className="gc-col-count">{col.count}</span>
                     </div>
                     {col.cards.map((card) => (
-                      <div
-                        className={`gc-card ${col.won ? "gc-card-won" : ""}`}
+                      <KanbanCard
                         key={card.name}
-                      >
-                        <span className="gc-card-name">{card.name}</span>
-                        <span className="gc-card-value">{card.value}</span>
-                      </div>
+                        card={card}
+                        won={col.won}
+                        layoutId={card.name === movingCard.name ? "gc-deal-card" : undefined}
+                      />
                     ))}
                     <div className="gc-ghost"></div>
                   </div>
@@ -147,8 +174,9 @@ export default function Portofolio() {
               : {};
             return (
               <CardTag
-                className="mini-project-card"
+                className="mini-project-card spotlight-card"
                 key={i}
+                onMouseMove={trackSpotlight}
                 {...linkProps}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
