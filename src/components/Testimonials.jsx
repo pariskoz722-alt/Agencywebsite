@@ -9,18 +9,18 @@ const StarIcon = () => (
 
 const reviews = [
   {
-    initials: "MV",
-    name: "Marcus Vance",
-    role: "Founder, Apex Capital",
+    initials: "XK",
+    name: "Xristos Keteoglou",
+    role: "Manager, Theros by the sea",
     quote:
-      "Sterling Digital took our outdated platform and turned it into an absolute masterpiece. The design is breathtaking, but the custom automation they built is what truly transformed our business. They operate at a level of quality that is extremely rare.",
+      "Sterling Digital developed our website they understood the assigment and took action, in only 3 days we had a finished and awesome website for our business",
   },
   {
-    initials: "SR",
-    name: "Sofia Reyes",
-    role: "CMO, Marble & Co.",
+    initials: "RK",
+    name: "Ridvan Koz",
+    role: "Manager, Mykebab",
     quote:
-      "The team understood our brand instantly. They delivered a site that feels premium, loads in under a second, and has doubled our inbound inquiry rate. Worth every cent and more.",
+      "Paris and his team took on a mission to create our website we had an amazing communication. They delivered a great product that left us and the visitors very happy",
   },
   {
     initials: "JT",

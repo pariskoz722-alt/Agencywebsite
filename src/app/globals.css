@@ -433,6 +433,7 @@ body {
   background-color: var(--bg-secondary);
   display: flex;
   justify-content: center;
+  background-color: #0C2A1E;
 }
 
 .services-container-premium {
@@ -656,6 +657,7 @@ body {
   background-color: var(--bg-secondary);
   display: flex;
   justify-content: center;
+  background-color: #0C2A1E;
 }
 
 .portfolio-container-premium {
@@ -1086,6 +1088,7 @@ a.mini-project-card {
   display: flex;
   justify-content: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  background-color:#0C2A1E;
 }
 
 .process-container-premium {
@@ -1177,205 +1180,6 @@ a.mini-project-card {
 }
 
 /* ============================================================
-   PRICING
-   ============================================================ */
-.pricing-section-premium {
-  padding: 140px 4%;
-  background-color: var(--bg-card);
-  display: flex;
-  justify-content: center;
-}
-
-.pricing-container-premium {
-  max-width: 1200px;
-  width: 100%;
-}
-
-.pricing-header {
-  margin-bottom: 64px;
-}
-
-.pricing-tag {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--text-muted);
-  display: block;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-}
-
-.pricing-main-title {
-  color: var(--text-white);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  margin: 0 0 12px 0;
-}
-
-.pricing-subtitle {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  margin: 0;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  align-items: stretch;
-}
-
-@media (max-width: 968px) {
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    margin: 0 auto;
-  }
-}
-
-.pricing-card {
-  background-color: var(--bg-primary);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  padding: 40px 32px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: border-color 0.3s ease, transform 0.3s ease;
-}
-
-.pricing-card:hover {
-  border-color: rgba(176, 141, 87, 0.25);
-  transform: translateY(-4px);
-}
-
-.pricing-card.featured-plan {
-  border: 1px solid rgba(176, 141, 87, 0.45);
-  background-color: rgba(176, 141, 87, 0.03);
-}
-
-.pricing-card.featured-plan:hover {
-  border-color: rgba(176, 141, 87, 0.7);
-}
-
-.plan-badge {
-  position: absolute;
-  top: -13px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--accent-volt);
-  color: var(--bg-primary);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 4px 14px;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-
-.plan-name {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-white);
-  margin: 0 0 6px 0;
-}
-
-.plan-desc {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  margin: 0 0 28px 0;
-  line-height: 1.5;
-}
-
-.plan-price {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  margin-bottom: 28px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.price-amount {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: var(--accent-volt);
-  letter-spacing: -0.04em;
-  line-height: 1;
-}
-
-.price-suffix {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.plan-features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 32px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
-  flex: 1;
-}
-
-.plan-features li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.45;
-}
-
-.plan-features li svg {
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
-  stroke: var(--accent-volt);
-  fill: none;
-  margin-top: 2px;
-}
-
-.btn-plan {
-  display: block;
-  text-align: center;
-  padding: 13px 20px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: none;
-  font-family: inherit;
-}
-
-.btn-plan-outline {
-  background-color: transparent;
-  color: var(--accent-volt);
-  border: 1px solid rgba(176, 141, 87, 0.3);
-}
-
-.btn-plan-outline:hover {
-  background-color: rgba(176, 141, 87, 0.06);
-  border-color: var(--accent-volt);
-}
-
-.btn-plan-filled {
-  background-color: var(--accent-volt);
-  color: var(--bg-primary);
-}
-
-.btn-plan-filled:hover {
-  filter: brightness(1.1);
-  transform: translateY(-1px);
-}
-
-/* ============================================================
    TESTIMONIALS
    ============================================================ */
 .testimonials-section-premium {
@@ -1384,6 +1188,7 @@ a.mini-project-card {
   display: flex;
   justify-content: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  background-color: #0C2A1E;
 }
 
 .testimonials-container-premium {
