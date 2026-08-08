@@ -11,7 +11,7 @@ const reviews = [
   {
     initials: "XK",
     name: "Xristos Keteoglou",
-    role: "Manager, Theros by the sea",
+    role: "Manager, Theros by the Sea",
     quote:
       "Sterling Digital developed our website. They understood the assignment and took action — in only 3 days we had a finished and awesome website for our business.",
   },
@@ -25,7 +25,7 @@ const reviews = [
   {
     initials: "JB",
     name: "Juliet Bali",
-    role: "Owner, Hair artists voula",
+    role: "Owner, Hair Artists Voula",
     quote:
       "Sterling Digital handled the booking website for my hair salon and I’m very happy with the result. Everyone on the team is also super kind!",
   },
