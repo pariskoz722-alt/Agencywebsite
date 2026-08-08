@@ -13,21 +13,21 @@ const reviews = [
     name: "Xristos Keteoglou",
     role: "Manager, Theros by the sea",
     quote:
-      "Sterling Digital developed our website they understood the assigment and took action, in only 3 days we had a finished and awesome website for our business",
+      "Sterling Digital developed our website. They understood the assignment and took action — in only 3 days we had a finished and awesome website for our business.",
   },
   {
     initials: "RK",
     name: "Ridvan Koz",
     role: "Manager, Mykebab",
     quote:
-      "Paris and his team took on a mission to create our website we had an amazing communication. They delivered a great product that left us and the visitors very happy",
+      "Paris and his team took on a mission to create our website, and the communication was amazing throughout. They delivered a great product that left us and our visitors very happy.",
   },
   {
-    initials: "JT",
-    name: "James Thorpe",
-    role: "CEO, Northwave Labs",
+    initials: "JB",
+    name: "Juliet Bali",
+    role: "Owner, Hair artists voula",
     quote:
-      "Working with Sterling Digital was seamless from day one. They pushed back when our ideas weren't optimal, proposed smarter solutions, and shipped on time. That combination is near impossible to find.",
+      "Sterling Digital handled the booking website for my hair salon and I’m very happy with the result. Everyone on the team is also super kind!",
   },
 ];
 
