@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { trackSpotlight } from "./spotlight";
+import { trackSpotlight } from "@/lib/spotlight";
 
 // GoClosed pipeline preview — a simplified mock of the app's signature Kanban board.
 // When the showcase scrolls into view, the Marea Sushi card "closes the deal":

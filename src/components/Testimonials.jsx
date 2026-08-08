@@ -61,7 +61,7 @@ export default function Testimonials() {
                 {[...Array(5)].map((_, s) => <StarIcon key={s} />)}
               </div>
 
-              <p className="review-text">"{review.quote}"</p>
+              <p className="review-text">&ldquo;{review.quote}&rdquo;</p>
 
               <div className="review-author">
                 <div className="review-avatar">{review.initials}</div>

@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sterling Digital
 
-## Getting Started
+Marketing site for Sterling Digital — [sterlingdigital.gr](https://sterlingdigital.gr)
 
-First, run the development server:
+Built with Next.js (App Router), React, and Framer Motion. The site is fully
+static: there is no database, no authentication, and no API routes.
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Development server |
+| `npm run build` | Production build |
+| `npm start` | Serve the production build |
+| `npm run lint` | ESLint |
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/          Routes, layout, global styles, generated metadata
+                (icon, opengraph-image, sitemap, robots)
+  components/   UI components (all client components)
+  lib/          Framework-agnostic helpers
+public/         Static assets served at the site root
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Security
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Security headers, including a Content Security Policy, are defined in
+`next.config.mjs`. The policy is strict in production and relaxed in development
+only, because React's development build needs `eval()` and Fast Refresh needs a
+WebSocket connection.
 
-## Deploy on Vercel
+Because the site is static, there is no server-side data access to protect. If an
+API route or form handler is added later, it will need its own input validation,
+rate limiting, and spam protection — none of that exists today.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed on Vercel. Pushing to `main` or running `npx vercel --prod` publishes.

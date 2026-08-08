@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { trackSpotlight } from "./spotlight";
+import { trackSpotlight } from "@/lib/spotlight";
 
 const services = [
   {

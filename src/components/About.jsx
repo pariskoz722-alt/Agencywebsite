@@ -57,7 +57,7 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            A boutique digital agency crafting elite web experiences. We don't do mass production — every pixel is intentional, every animation natural, every product a reflection of true craftsmanship.
+            A boutique digital agency crafting elite web experiences. We don&rsquo;t do mass production — every pixel is intentional, every animation natural, every product a reflection of true craftsmanship.
           </motion.h2>
 
           <motion.p

@@ -1,36 +1,17 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import Link from "next/link";
-
-const STORAGE_KEY = "sd-cookie-consent";
+import {
+  subscribe,
+  getConsent,
+  getServerConsent,
+  setConsent,
+} from "@/lib/cookieConsent";
 
 export default function CookieConsent() {
-  // null = not yet decided this session; false = hidden; true = show banner
-  const [visible, setVisible] = useState(false);
+  const consent = useSyncExternalStore(subscribe, getConsent, getServerConsent);
 
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (!saved) setVisible(true);
-    } catch {
-      // localStorage unavailable (e.g. privacy mode) — show the banner anyway.
-      setVisible(true);
-    }
-  }, []);
-
-  const decide = (choice) => {
-    try {
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify({ choice, date: new Date().toISOString() })
-      );
-    } catch {
-      /* no-op */
-    }
-    setVisible(false);
-  };
-
-  if (!visible) return null;
+  if (consent) return null;
 
   return (
     <div className="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
@@ -45,14 +26,14 @@ export default function CookieConsent() {
           <button
             type="button"
             className="cookie-btn cookie-reject"
-            onClick={() => decide("rejected")}
+            onClick={() => setConsent("rejected")}
           >
             Decline optional
           </button>
           <button
             type="button"
             className="cookie-btn cookie-accept"
-            onClick={() => decide("accepted")}
+            onClick={() => setConsent("accepted")}
           >
             Accept all
           </button>
