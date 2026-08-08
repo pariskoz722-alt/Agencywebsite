@@ -36,7 +36,7 @@ export default function Footer() {
         <div className="footer-links-col">
           <h4 className="footer-col-title">Connect</h4>
           <ul className="footer-list">
-            <li><a href="mailto:hello@sterlingdigital.gr">Email Us</a></li>
+            <li><a href="mailto:info.sterlingdigital@gmail.com">Email Us</a></li>
             <li>
               <a
                 href="https://www.instagram.com/sterlingdigital.gr/"

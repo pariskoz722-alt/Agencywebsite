@@ -22,7 +22,7 @@ export default function Contact() {
           <div className="contact-direct-links">
             <div className="direct-item">
               <span className="item-label">Email us directly</span>
-              <a href="mailto:hello@sterlingdigital.gr" className="item-link">hello@sterlingdigital.gr</a>
+              <a href="mailto:info.sterlingdigital@gmail.com" className="item-link">info.sterlingdigital@gmail.com</a>
             </div>
           </div>
         </motion.div>

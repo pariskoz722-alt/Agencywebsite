@@ -100,7 +100,7 @@ export default function TermsPage() {
       <h2>10. Contact Us</h2>
       <p>
         Questions about these Terms? Email us at{" "}
-        <a href="mailto:hello@sterlingdigital.gr">hello@sterlingdigital.gr</a>.
+        <a href="mailto:info.sterlingdigital@gmail.com">info.sterlingdigital@gmail.com</a>.
       </p>
     </main>
   );

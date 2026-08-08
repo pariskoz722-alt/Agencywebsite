@@ -23,9 +23,8 @@ export default function PrivacyPolicyPage() {
 
       <div className="legal-note">
         <strong>Action required before launch:</strong> replace the placeholders
-        below (registered company name, address, VAT/registration number, and the
-        data protection contact email) with your actual business details so this
-        policy is legally accurate.
+        below (registered company name, address, and VAT/registration number) with
+        your actual business details so this policy is legally accurate.
       </div>
 
       <h2>1. Data Controller</h2>
@@ -36,7 +35,7 @@ export default function PrivacyPolicyPage() {
         <li><strong>Sterling Digital</strong> [registered legal name]</li>
         <li>[Registered address], Greece</li>
         <li>VAT / registration number: [ΑΦΜ / Γ.Ε.ΜΗ.]</li>
-        <li>Email: <a href="mailto:privacy@sterlingdigital.gr">privacy@sterlingdigital.gr</a></li>
+        <li>Email: <a href="mailto:info.sterlingdigital@gmail.com">info.sterlingdigital@gmail.com</a></li>
       </ul>
 
       <h2>2. What Data We Collect</h2>
@@ -123,7 +122,7 @@ export default function PrivacyPolicyPage() {
       </ul>
       <p>
         To exercise any of these rights, contact us at{" "}
-        <a href="mailto:privacy@sterlingdigital.gr">privacy@sterlingdigital.gr</a>.
+        <a href="mailto:info.sterlingdigital@gmail.com">info.sterlingdigital@gmail.com</a>.
         You also have the right to lodge a complaint with the Hellenic Data
         Protection Authority (Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα,{" "}
         <a href="https://www.dpa.gr" target="_blank" rel="noopener noreferrer">www.dpa.gr</a>).
@@ -151,7 +150,7 @@ export default function PrivacyPolicyPage() {
       <h2>12. Contact Us</h2>
       <p>
         Questions about this policy or your data? Email us at{" "}
-        <a href="mailto:privacy@sterlingdigital.gr">privacy@sterlingdigital.gr</a>.
+        <a href="mailto:info.sterlingdigital@gmail.com">info.sterlingdigital@gmail.com</a>.
       </p>
     </main>
   );

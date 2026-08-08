@@ -82,7 +82,7 @@ export default function CookiePolicyPage() {
       <h2>6. Contact Us</h2>
       <p>
         Questions about our use of cookies? Email us at{" "}
-        <a href="mailto:privacy@sterlingdigital.gr">privacy@sterlingdigital.gr</a>.
+        <a href="mailto:info.sterlingdigital@gmail.com">info.sterlingdigital@gmail.com</a>.
       </p>
     </main>
   );
