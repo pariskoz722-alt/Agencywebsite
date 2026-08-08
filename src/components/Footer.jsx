@@ -37,6 +37,15 @@ export default function Footer() {
           <h4 className="footer-col-title">Connect</h4>
           <ul className="footer-list">
             <li><a href="mailto:hello@sterlingdigital.gr">Email Us</a></li>
+            <li>
+              <a
+                href="https://www.instagram.com/sterlingdigital.gr/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+            </li>
           </ul>
         </div>
 
