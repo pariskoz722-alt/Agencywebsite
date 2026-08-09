@@ -33,6 +33,7 @@ const miniProjects = [
   {
     label: "2026 · Web App · Quiz Platform",
     title: "PanelQuiz.gr",
+    stack: ["Next.js", "React", "Tailwind"],
     desc: "Still buttoning its shirt. We're wiring up the buzzers, polishing the questions, and teaching it to keep score without cheating. Big-brain energy, dropping soon.",
     status: "Under construction",
     bg: "linear-gradient(135deg, #123D2B 0%, #0C2A1E 100%)",
@@ -40,6 +41,7 @@ const miniProjects = [
   {
     label: "2026 · Restaurant & Beach Bar",
     title: "Theros by the Sea",
+    stack: ["Next.js", "CSS", "Vercel"],
     desc: "A sun-soaked site for a seaside restaurant & beach bar in Anavyssos — warm imagery, an easy menu, and a direct path to reservations.",
     href: "https://therosbythesea.com",
     bg: "linear-gradient(rgba(8, 28, 19, 0.15), rgba(8, 28, 19, 0.5)), url(/theros.jpg) center 65% / cover",
@@ -154,6 +156,11 @@ export default function Portofolio() {
               from every card, and a reusable pitch-template vault. Built in Next.js,
               TypeScript, and Tailwind.
             </p>
+            <ul className="stack-tags stack-tags-lg">
+              {["Next.js", "TypeScript", "Tailwind CSS", "React"].map((tech) => (
+                <li key={tech}>{tech}</li>
+              ))}
+            </ul>
             <ul className="project-highlights">
               {goclosedHighlights.map((h) => (
                 <li key={h}>{h}</li>
@@ -198,6 +205,13 @@ export default function Portofolio() {
                 <div className="mini-project-info">
                   <p className="mini-project-meta">{project.label}</p>
                   <h4 className="mini-project-title">{project.title}</h4>
+                  {project.stack && (
+                    <ul className="stack-tags">
+                      {project.stack.map((tech) => (
+                        <li key={tech}>{tech}</li>
+                      ))}
+                    </ul>
+                  )}
                   {project.desc && (
                     <p className="mini-project-desc">{project.desc}</p>
                   )}

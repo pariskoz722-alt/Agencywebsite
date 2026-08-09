@@ -81,7 +81,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
             >
-              We build websites
+              We design and build
             </motion.span>
             <motion.span
               className="hero-line"
@@ -90,7 +90,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
             >
-              that make businesses
+              custom-coded websites
             </motion.span>
             <motion.span
               className="hero-line text-gradient shimmer-line"
@@ -99,7 +99,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
             >
-              impossible to ignore.
+              from the ground up.
             </motion.span>
           </h1>
 
@@ -110,8 +110,8 @@ export default function Hero() {
             initial="hidden"
             animate="show"
           >
-            Premium design, ultra-fast development, and intelligent automation
-            built for brands that care about quality.
+            A showcase of our work in modern web development — custom interfaces,
+            fast front-ends, and thoughtful automation, written from scratch.
           </motion.p>
 
           <motion.div
@@ -121,8 +121,8 @@ export default function Hero() {
             initial="hidden"
             animate="show"
           >
-            <MagneticLink href="#contact" className="btn-primary">Book a Call</MagneticLink>
-            <MagneticLink href="#portfolio" className="btn-secondary">View Our Work</MagneticLink>
+            <MagneticLink href="#portfolio" className="btn-primary">View Our Work</MagneticLink>
+            <MagneticLink href="#contact" className="btn-secondary">Let&rsquo;s Talk</MagneticLink>
           </motion.div>
 
         </div>

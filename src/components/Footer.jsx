@@ -21,15 +21,16 @@ export default function Footer() {
             <li><Link href="/#about">About</Link></li>
             <li><Link href="/services">Services</Link></li>
             <li><Link href="/#portfolio">Portfolio</Link></li>
+            <li><Link href="/blog">Blog</Link></li>
           </ul>
         </div>
 
         <div className="footer-links-col">
-          <h4 className="footer-col-title">Services</h4>
+          <h4 className="footer-col-title">Capabilities</h4>
           <ul className="footer-list">
-            <li><Link href="/services">Web Design</Link></li>
-            <li><Link href="/services">Next.js Development</Link></li>
-            <li><Link href="/services">Smart Automation</Link></li>
+            <li><Link href="/#services">Interface Design</Link></li>
+            <li><Link href="/#services">Front-end Engineering</Link></li>
+            <li><Link href="/#services">Automation &amp; Tooling</Link></li>
           </ul>
         </div>
 
@@ -54,7 +55,7 @@ export default function Footer() {
           <ul className="footer-list">
             <li><Link href="/privacy-policy">Privacy Policy</Link></li>
             <li><Link href="/cookie-policy">Cookie Policy</Link></li>
-            <li><Link href="/terms">Terms &amp; Conditions</Link></li>
+            <li><Link href="/terms">Terms of Use</Link></li>
           </ul>
         </div>
 

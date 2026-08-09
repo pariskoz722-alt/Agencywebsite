@@ -40,19 +40,20 @@ export default function CookiePolicyPage() {
         </li>
       </ul>
 
+      <ul>
+        <li>
+          <strong>sd-theme</strong> — remembers whether you chose light or dark
+          mode. Stored in your browser&rsquo;s local storage.
+        </li>
+      </ul>
+
       <h3>Optional analytics (only with your consent)</h3>
       <p>
-        If enabled, these help us understand how visitors use the Site so we can
-        improve it. They are set <strong>only after you click &ldquo;Accept
-        all&rdquo;</strong> in our cookie banner and are never loaded if you decline.
+        We currently run <strong>no analytics and no tracking cookies at all</strong>.
+        If we add privacy-friendly analytics in future, they will load only after
+        you click &ldquo;Accept all&rdquo; in the cookie banner, never if you
+        decline, and each cookie will be listed here first.
       </p>
-
-      <div className="legal-note">
-        <strong>Note for the site owner:</strong> if and when you add an analytics
-        tool (e.g. a privacy-friendly analytics provider), list each cookie here —
-        its name, provider, purpose, and duration — and make sure it loads only
-        after consent is given.
-      </div>
 
       <h2>3. Managing Your Preferences</h2>
       <p>

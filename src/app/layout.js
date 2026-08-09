@@ -20,15 +20,15 @@ const fraunces = Fraunces({
 export const metadata = {
   metadataBase: new URL("https://sterlingdigital.gr"),
   title: {
-    default: "Sterling Digital — Premium Web Design & Development",
+    default: "Sterling Digital — Web Development Portfolio & Blog",
     template: "%s | Sterling Digital",
   },
   description:
-    "Sterling Digital crafts premium websites, ultra-fast development, and intelligent automation for forward-thinking brands.",
+    "A portfolio and technical blog from Sterling Digital — custom-coded websites, front-end engineering, and notes on building for the modern web.",
   keywords: [
     "web design Greece",
     "Next.js development",
-    "digital agency Athens",
+    "web development portfolio",
     "κατασκευή ιστοσελίδων",
     "business automation",
   ],
@@ -37,15 +37,15 @@ export const metadata = {
     locale: "en_GB",
     url: "https://sterlingdigital.gr",
     siteName: "Sterling Digital",
-    title: "Sterling Digital — Premium Web Design & Development",
+    title: "Sterling Digital — Web Development Portfolio & Blog",
     description:
-      "We build websites that make businesses impossible to ignore. Premium design, ultra-fast development, and intelligent automation.",
+      "A portfolio of custom-coded websites and front-end work, plus articles on performance, security, and building for the modern web.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sterling Digital — Premium Web Design & Development",
+    title: "Sterling Digital — Web Development Portfolio & Blog",
     description:
-      "We build websites that make businesses impossible to ignore. Premium design, ultra-fast development, and intelligent automation.",
+      "A portfolio of custom-coded websites and front-end work, plus articles on performance, security, and building for the modern web.",
   },
   robots: {
     index: true,
@@ -53,9 +53,31 @@ export const metadata = {
   },
 };
 
+// Runs before first paint so the saved theme is applied without a flash of the
+// wrong colours. Kept inline and tiny for that reason.
+const themeScript = `
+(function(){
+  try {
+    var stored = localStorage.getItem('sd-theme');
+    var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    document.documentElement.dataset.theme = stored || (prefersLight ? 'light' : 'dark');
+  } catch (e) {
+    document.documentElement.dataset.theme = 'dark';
+  }
+})();
+`;
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${fraunces.variable}`}>
+    <html
+      lang="en"
+      data-theme="dark"
+      className={`${spaceGrotesk.variable} ${fraunces.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <MotionProvider>
           <Navbar />

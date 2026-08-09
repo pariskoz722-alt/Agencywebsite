@@ -4,9 +4,9 @@ import { trackSpotlight } from "@/lib/spotlight";
 
 const services = [
   {
-    title: "Web Design",
-    subtitle: "Conversion-first aesthetics",
-    desc: "Custom interfaces built to convert visitors into paying clients. Every layout, color choice, and micro-interaction is intentional.",
+    title: "Interface Design",
+    subtitle: "Design systems & layout",
+    desc: "Custom interfaces designed from scratch — type scales, colour systems, spacing rhythm, and micro-interactions. No templates, no page builders.",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -15,9 +15,9 @@ const services = [
     ),
   },
   {
-    title: "Development",
-    subtitle: "Fast. Clean. Scalable.",
-    desc: "Production-ready code built on React and Next.js. Optimized for Core Web Vitals, SEO, and flawless performance at any scale.",
+    title: "Front-end Engineering",
+    subtitle: "React · Next.js · TypeScript",
+    desc: "Production-grade code built on the React and Next.js App Router. Tuned for Core Web Vitals, semantic HTML, and accessibility.",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6" />
@@ -26,9 +26,9 @@ const services = [
     ),
   },
   {
-    title: "Automation",
-    subtitle: "Intelligent workflows",
-    desc: "Booking systems, custom CRMs, and AI integrations that eliminate manual work and let your business run while you sleep.",
+    title: "Automation & Tooling",
+    subtitle: "Workflows and integrations",
+    desc: "Booking flows, custom CRM interfaces, and API integrations — the kind of internal tooling that removes repetitive manual work.",
     icon: (
       <svg viewBox="0 0 24 24" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -49,8 +49,8 @@ export default function Services() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="services-tag">What We Do</span>
-          <h2 className="services-main-title">Our Expertise</h2>
+          <span className="services-tag">Capabilities</span>
+          <h2 className="services-main-title">What We Work With</h2>
         </motion.div>
 
         <div className="services-grid-premium">

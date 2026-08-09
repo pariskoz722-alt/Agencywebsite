@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 const MotionLink = motion.create(Link);
 
@@ -35,9 +36,11 @@ export default function Navbar() {
           <Link href="/#about" onClick={() => setMobileOpen(false)}>About</Link>
           <Link href="/#services" onClick={() => setMobileOpen(false)}>Services</Link>
           <Link href="/#portfolio" onClick={() => setMobileOpen(false)}>Portfolio</Link>
+          <Link href="/blog" onClick={() => setMobileOpen(false)}>Blog</Link>
           <Link href="/#contact" className="nav-cta" onClick={() => setMobileOpen(false)}>
-            Contact Us
+            Contact
           </Link>
+          <ThemeToggle />
         </motion.div>
 
         <button

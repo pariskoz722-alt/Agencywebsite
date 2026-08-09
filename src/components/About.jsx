@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView, animate } from "framer-motion";
 
 const stats = [
-  { number: "50+", label: "Projects Delivered" },
-  { number: "100%", label: "Client Satisfaction" },
+  { number: "50+", label: "Projects Built" },
+  { number: "100%", label: "Custom-Coded" },
   { number: "3+", label: "Years of Craft" },
 ];
 
@@ -57,7 +57,7 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            A boutique digital agency crafting elite web experiences. We don&rsquo;t do mass production — every pixel is intentional, every animation natural, every product a reflection of true craftsmanship.
+            A small studio that writes its own code. We don&rsquo;t do mass production — every pixel is intentional, every animation natural, every build a reflection of real craftsmanship.
           </motion.h2>
 
           <motion.p
@@ -67,7 +67,7 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            By combining high-end aesthetics with clean modern engineering and smart automation, we help visionary brands elevate their digital presence and leave generic corporate solutions in the dust.
+            This site is a portfolio of that work — the interfaces we&rsquo;ve designed, the front-ends we&rsquo;ve engineered, and the notes we keep along the way about building for the modern web.
           </motion.p>
 
           <motion.div

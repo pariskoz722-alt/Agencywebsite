@@ -60,8 +60,8 @@ export default function OpengraphImage() {
               color: "#F1E9D8",
             }}
           >
-            <span>We build websites that make</span>
-            <span style={{ color: "#B08D57" }}>businesses impossible to ignore.</span>
+            <span>We design and build custom-coded</span>
+            <span style={{ color: "#B08D57" }}>websites from the ground up.</span>
           </div>
           <div
             style={{
@@ -71,7 +71,7 @@ export default function OpengraphImage() {
               display: "flex",
             }}
           >
-            Premium design · Ultra-fast development · Smart automation
+            Web development portfolio · Notes on building for the web
           </div>
         </div>
 
@@ -87,7 +87,7 @@ export default function OpengraphImage() {
           }}
         >
           <span>sterlingdigital.gr</span>
-          <span style={{ color: "#B08D57" }}>Book a call →</span>
+          <span style={{ color: "#B08D57" }}>View the work →</span>
         </div>
       </div>
     ),

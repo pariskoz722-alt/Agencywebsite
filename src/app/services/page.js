@@ -1,18 +1,19 @@
 import Services from "@/components/Services";
 
 export const metadata = {
-  title: "Services",
+  title: "Capabilities",
   description:
-    "Web design, Next.js development, and intelligent automation for brands that care about quality.",
+    "The tools and disciplines we work with: interface design, front-end engineering with React and Next.js, and automation tooling.",
 };
 
-export default function ServicesPage() {
-    return (
-        <div style={{padding: "120px 20px 60px 20px"}}>
-            <h1 style={{textAlign: "center", fontSize: "2.5rem", marginBottom: "40px"}}>
-                Our Services — Sterling Digital
-            </h1>
-            <Services />
-        </div>
-    );
+export default function CapabilitiesPage() {
+  return (
+    <main className="legal-page">
+      <h1>What We Work With</h1>
+      <p className="blog-intro">
+        A closer look at the disciplines behind the projects in our portfolio.
+      </p>
+      <Services />
+    </main>
+  );
 }

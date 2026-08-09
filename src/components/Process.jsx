@@ -5,23 +5,23 @@ export default function Process() {
   const steps = [
     {
       num: "01",
-      title: "Discovery",
-      desc: "Deep dive into your business model, target audience, and goals. We map out the structure and define what makes you impossible to ignore."
+      title: "Research",
+      desc: "Understanding the problem before writing any code — the content, the audience, and the constraints that shape the information architecture."
     },
     {
       num: "02",
-      title: "Strategy & Design",
-      desc: "We craft interactive high-fidelity prototypes. No generic templates—every layout is custom designed to reflect your brand's unique authority."
+      title: "Design",
+      desc: "Building the type scale, colour system, and layout grid, then working them into high-fidelity prototypes. Every screen designed, never templated."
     },
     {
       num: "03",
-      title: "Development",
-      desc: "We turn designs into clean, lightning-fast code using React and Next.js, optimized for maximum speed, SEO, and flawless performance."
+      title: "Build",
+      desc: "Translating the design into semantic, accessible React and Next.js code — component by component, with performance budgets in mind from the start."
     },
     {
       num: "04",
-      title: "Launch & Optimize",
-      desc: "Deploying your premium platform to production, setting up integrations, and monitoring to ensure your brand stands out from day one."
+      title: "Ship & Measure",
+      desc: "Deploying to production, then measuring what matters: Core Web Vitals, accessibility audits, and real-world loading behaviour."
     }
   ];
 
@@ -37,8 +37,8 @@ export default function Process() {
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="process-tag">HOW WE WORK</span>
-          <h2 className="process-main-title">Our Process</h2>
+          <span className="process-tag">METHOD</span>
+          <h2 className="process-main-title">How We Build</h2>
         </motion.div>
 
         {/* 4-Step Process Grid */}
