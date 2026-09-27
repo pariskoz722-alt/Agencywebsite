@@ -35,7 +35,7 @@ const miniProjects = [
     title: "Hair artists LB",
     stack: ["Next.js", "React", "Tailwind"],
     desc: "A modern digital hub and integrated booking platform for a premium hair salon—designed with sleek layout structure, fast performance, and an effortless client appointment flow.",
-    bg: "linear-gradient(rgba(8, 28, 19, 0.15), rgba(8, 28, 19, 0.5)), url(/hairartists.jpg) center / cover",
+    bg: "url(/hairartists.jpg) center / cover",
     href: "https://hair-artists.gr"
   },
   {
@@ -44,7 +44,7 @@ const miniProjects = [
     stack: ["Next.js", "CSS", "Vercel"],
     desc: "A sun-soaked site for a seaside restaurant & beach bar in Anavyssos — warm imagery, an easy menu, and a direct path to reservations.",
     href: "https://therosbythesea.com",
-    bg: "linear-gradient(rgba(8, 28, 19, 0.15), rgba(8, 28, 19, 0.5)), url(/theros.jpg) center 65% / cover",
+    bg: "url(/theros.jpg) center 65% / cover",
   },
 ];
 
@@ -200,7 +200,6 @@ export default function Portofolio() {
                       {project.status}
                     </span>
                   )}
-                  <span className="mini-project-visual-label">{project.title}</span>
                 </div>
                 <div className="mini-project-info">
                   <p className="mini-project-meta">{project.label}</p>

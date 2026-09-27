@@ -2422,7 +2422,7 @@ body {
 /* Container layout & Spacing */
 .contact-section-premium {
   padding: 120px 24px;
-  background-color: var(--bg-primary, #0c2a1e);
+  background-color: var(--bg-primary);
   display: flex;
   justify-content: center;
 }
@@ -2444,7 +2444,7 @@ body {
   width: 100%;
 }
 
-/* Premium Dark Card Base Styling */
+/* Dynamic Dynamic Card Styling (Adapts to Theme) */
 .contact-card-premium {
   display: flex;
   flex-direction: column;
@@ -2452,8 +2452,8 @@ body {
   text-align: center;
   padding: 32px 24px;
   
-  background-color: rgba(255, 255, 255, 0.03); 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--bg-surface, rgba(255, 255, 255, 0.04)); 
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
   border-radius: 18px;
   text-decoration: none;
   backdrop-filter: blur(12px);
@@ -2463,11 +2463,10 @@ body {
               box-shadow 0.3s ease;
 }
 
-/* Hover State */
 .contact-card-premium:hover {
-  background-color: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.35);
+  background-color: var(--bg-surface-hover, rgba(255, 255, 255, 0.08));
+  border-color: var(--border-color-hover, rgba(255, 255, 255, 0.25));
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.15);
 }
 
 /* Icon Container */
@@ -2475,18 +2474,14 @@ body {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background-color: rgba(255, 255, 255, 0.06);
-  color: var(--text-white, #f4f1ea);
+  background-color: var(--bg-surface-hover, rgba(255, 255, 255, 0.06));
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
   transition: background-color 0.3s ease;
-}
-
-.contact-card-premium:hover .contact-card-icon {
-  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .contact-card-icon svg {
@@ -2494,13 +2489,14 @@ body {
   height: 24px;
 }
 
+/* Labels & Values with Dynamic Theme Text Colors */
 .contact-card-label {
   display: block;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted, #8c8a84);
   margin-bottom: 6px;
 }
 
@@ -2508,7 +2504,7 @@ body {
   display: block;
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--text-white, #ffffff);
+  color: var(--text-primary);
   word-break: break-all;
 }
 
@@ -2517,4 +2513,133 @@ body {
     grid-template-columns: 1fr;
     gap: 36px;
   }
+}
+
+/* Legal Pages Layout & Alignment */
+.legal-page-section {
+  width: 100%;
+  padding-top: 160px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--bg-primary);
+}
+
+.legal-container {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Headings with High Contrast Purple Accent */
+.legal-tag {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #a85cf5;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.legal-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #a85cf5; /* Φωτεινό μωβ που κάνει τέλεια αντίθεση και σε dark & light mode */
+}
+
+.legal-updated {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  opacity: 0.8;
+}
+
+.legal-content h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-top: 36px;
+  margin-bottom: 12px;
+  color: #b78af7; /* Ελαφρώς πιο φωτεινό μωβ για τα υπόλοιπα h2 */
+  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  padding-bottom: 8px;
+}
+
+/* Paragraphs & List Text - Fully Dynamic Theme Colors */
+.legal-content p, 
+.legal-content li,
+.legal-content strong {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary) !important; /* Παίρνει αυτόματα το λευκό/ανοιχτό στο dark και το σκούρο στο light mode */
+  margin-bottom: 16px;
+}
+
+.legal-content ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.legal-content code {
+  background: var(--bg-surface, rgba(255, 255, 255, 0.1));
+  color: var(--text-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Contact Section Cards Styles */
+.contact-card {
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+  background-color: var(--card-bg, rgba(255, 255, 255, 0.5));
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect για να "ζωντανεύει" η κάρτα */
+.contact-card:hover {
+  border-color: #8a5cf5;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(138, 92, 245, 0.15);
+}
+
+/* Dark Mode Overrides (αν χρησιμοποιείς data-theme ή css variables) */
+[data-theme="dark"] .contact-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] .contact-card:hover {
+  border-color: #a85cf5;
+  box-shadow: 0 10px 30px -10px rgba(168, 92, 245, 0.25);
+}
+
+/* Contact Card Styles Override */
+.contact-card-premium {
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  background-color: rgba(0, 0, 0, 0.03) !important;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.contact-card-premium:hover {
+  border-color: #8a5cf5 !important;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(138, 92, 245, 0.2);
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .contact-card-premium {
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+[data-theme="dark"] .contact-card-premium:hover {
+  border-color: #a85cf5 !important;
+  box-shadow: 0 10px 25px -5px rgba(168, 92, 245, 0.3);
 }
