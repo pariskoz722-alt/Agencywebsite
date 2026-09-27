@@ -31,12 +31,12 @@ const goclosedHighlights = [
 
 const miniProjects = [
   {
-    label: "2026 · Web App · Quiz Platform",
-    title: "PanelQuiz.gr",
+    label: "2026 · Website · Hair salon",
+    title: "Hair artists LB",
     stack: ["Next.js", "React", "Tailwind"],
-    desc: "Still buttoning its shirt. We're wiring up the buzzers, polishing the questions, and teaching it to keep score without cheating. Big-brain energy, dropping soon.",
-    status: "Under construction",
-    bg: "linear-gradient(135deg, #123D2B 0%, #0C2A1E 100%)",
+    desc: "A modern digital hub and integrated booking platform for a premium hair salon—designed with sleek layout structure, fast performance, and an effortless client appointment flow.",
+    bg: "linear-gradient(rgba(8, 28, 19, 0.15), rgba(8, 28, 19, 0.5)), url(/hairartists.jpg) center / cover",
+    href: "https://hair-artists.gr"
   },
   {
     label: "2026 · Restaurant & Beach Bar",
